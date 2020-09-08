@@ -11,8 +11,21 @@ app.use(bodyParser())
 
 app.get('/', (req, res) => {
     res.send({
-        headers: req.headers,
-        body: req.body,
+        info: "pingpong",
+        headers: "/headers",
+        body: "POST /body"
+    })
+})
+
+app.post('/body', (req, res) => {
+    res.send({
+        body: req.body
+    })
+})
+
+app.get('/headers', (req, res) => {
+    res.send({
+        headers: req.headers
     })
 })
 
